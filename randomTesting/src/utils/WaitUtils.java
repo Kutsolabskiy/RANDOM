@@ -17,7 +17,7 @@ import java.util.function.Predicate;
 
 public class WaitUtils {
 
-    private static final int DEFAULT_TIMEOUT = 10;
+    private static final int DEFAULT_TIMEOUT = 30;
 
     public static <T extends Loadable> T waitUntilLoaded(T loadable){
         createWait(loadable).until(Loadable::isLoaded);

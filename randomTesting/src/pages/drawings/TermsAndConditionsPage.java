@@ -6,7 +6,7 @@ import pages.AbstractPage;
 import utils.ElementUtils;
 
 public class TermsAndConditionsPage extends AbstractPage<TermsAndConditionsPage> {
-    @FindBy(css = "//h2[text() = 'Third-Party Draw Service – Description']")
+    @FindBy(xpath = "//h2[text() = 'Third-Party Draw Service – Description']")
     WebElement pageHeadingElement;
 
     @Override

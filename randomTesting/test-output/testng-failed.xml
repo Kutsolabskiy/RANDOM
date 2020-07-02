@@ -8,7 +8,7 @@
           <include name="stopDriver"/>
           <include name="loudHomePage"/>
           <include name="setupDriver"/>
-          <include name="testWebToolsNavigation" invocation-numbers="0 1 2 3 4"/>
+          <include name="testDrawingsNavigation" invocation-numbers="1"/>
         </methods>
       </class> <!-- tests.essential.NavigationTest -->
     </classes>

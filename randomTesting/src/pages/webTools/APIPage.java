@@ -7,7 +7,7 @@ import utils.ElementUtils;
 
 public class APIPage extends AbstractPage<APIPage> {
 
-    @FindBy(css = "//h1[text() = 'API Dashboard ']")
+    @FindBy(xpath = "//h1[text() = 'API Dashboard ']")
     WebElement pageHeadingElement;
 
     @Override

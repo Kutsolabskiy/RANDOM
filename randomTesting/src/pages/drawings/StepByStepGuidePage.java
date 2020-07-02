@@ -6,7 +6,7 @@ import pages.AbstractPage;
 import utils.ElementUtils;
 
 public class StepByStepGuidePage extends AbstractPage<StepByStepGuidePage> {
-    @FindBy(css = "//h2[text() = 'Guide to Random Drawings']")
+    @FindBy(xpath = "//h2[text() = 'Guide to Random Drawings']")
     WebElement pageHeadingElement;
 
     @Override

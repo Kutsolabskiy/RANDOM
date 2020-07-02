@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.AbstractPage;
 import pages.PagePath;
+import utils.DriverProvider;
 import utils.ElementUtils;
 
 import java.util.HashMap;
@@ -62,10 +63,10 @@ public class IntegerGeneratorNumberPage extends AbstractPage<IntegerGeneratorNum
     @FindBy(xpath = "//input[@type='radio'][@name='rnd'][1]")
     private WebElement generateYourOwnPersonalRandomizationRightNowRadioButton;
 
-    @FindBy(xpath = "//input[@type='radio'][@name='rnd'][2]") //Look like Huita
+    @FindBy(xpath = "//input[@type='radio'][@name='rnd'][2]")
     private WebElement usePregeneratedRandomizationFromRadioButton;
 
-    @FindBy(xpath = "//input[@type='radio'][@name='rnd'][3]") //Look like Huita
+    @FindBy(xpath = "//input[@type='radio'][@name='rnd'][3]")
     private WebElement usePregeneratedRandomizationBasedOnPersistentIdentifierRadioButton;
 
     @FindBy(css = "pre.data")
@@ -77,6 +78,24 @@ public class IntegerGeneratorNumberPage extends AbstractPage<IntegerGeneratorNum
     }
 
     public IntegerGeneratorNumberPage setIntegersForSimpleTest(int numbersCount, int min, int max, int rowSize){
+        IntegerGeneratorNumberPage page = setIntegersSimpleTest(numbersCount, min, max, rowSize);
+        page.clickGetNumbersButton();
+        return page;
+    }
+
+    public IntegerGeneratorNumberPage setIntegersForResetSimpleTest(int numbersCount, int min, int max, int rowSize){
+        IntegerGeneratorNumberPage page = setIntegersSimpleTest(numbersCount, min, max, rowSize);
+        page.clickToButtonResetForm();
+        return page;
+    }
+
+    public IntegerGeneratorNumberPage setIntegersForAdvancedTest(int numbersCount, int min, int max, int rowSize, String numeralSystem, String outputFormat, String randomization){
+        IntegerGeneratorNumberPage page = setIntegersAdvancedTest(numbersCount, min, max, rowSize, numeralSystem, outputFormat, randomization);
+        clickGetNumbersButton();
+        return page;
+    }
+
+    private IntegerGeneratorNumberPage setIntegersSimpleTest(int numbersCount, int min, int max, int rowSize){
 
         ElementUtils.setValue(numbersCountField, String.valueOf(numbersCount));
 
@@ -86,12 +105,10 @@ public class IntegerGeneratorNumberPage extends AbstractPage<IntegerGeneratorNum
 
         ElementUtils.setValue(rowSizeField, String.valueOf(rowSize));
 
-        get_numbersButton.click();
-
         return this;
     }
 
-    public IntegerGeneratorNumberPage setIntegersForAdvancedTest(int numbersCount, int min, int max, int rowSize, String numeralSystem, String outputFormat, String randomization){
+    private IntegerGeneratorNumberPage setIntegersAdvancedTest(int numbersCount, int min, int max, int rowSize, String numeralSystem, String outputFormat, String randomization){
 
         advanced_modeButton.click();
 
@@ -109,8 +126,6 @@ public class IntegerGeneratorNumberPage extends AbstractPage<IntegerGeneratorNum
 
         getCheckBoxesElements(randomization).click();
 
-        get_numbersButton.click();
-
         return this;
     }
 
@@ -121,6 +136,14 @@ public class IntegerGeneratorNumberPage extends AbstractPage<IntegerGeneratorNum
                 .map(rawRow -> Stream.of(rawRow.trim().split("\\s"))
                         .map(Integer::parseInt).collect(Collectors.toList()))
                 .collect(Collectors.toList());
+    }
+
+    private void clickToButtonResetForm(){
+        reset_formButton.click();
+    }
+
+    private void clickGetNumbersButton (){
+        get_numbersButton.click();
     }
 
     private WebElement getCheckBoxesElements (String nameKey){

@@ -6,7 +6,7 @@ import pages.AbstractPage;
 import utils.ElementUtils;
 
 public class Old_API_Page extends AbstractPage<Old_API_Page> {
-    @FindBy(css = "//h2[text() = 'HTTP Interface Description']")
+    @FindBy(xpath = "//h2[text() = 'HTTP Interface Description']")
     WebElement pageHeadingElement;
 
     @Override

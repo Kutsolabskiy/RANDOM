@@ -7,7 +7,7 @@ import utils.ElementUtils;
 
 public class WebWidgetsPage extends AbstractPage<WebWidgetsPage> {
 
-    @FindBy(css = "//h2[text() = 'Web Widgets']")
+    @FindBy(xpath = "//h2[text() = 'Web Widgets']")
     WebElement pageHeadingElement;
 
     @Override

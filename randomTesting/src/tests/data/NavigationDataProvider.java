@@ -51,14 +51,17 @@ public class NavigationDataProvider {
     public static Object[][] drawingsNavigation(){
         return new Object[][]{
                 {DrawingsNavigation.HOW_PICK_WINNER},
+                {DrawingsNavigation.THIRD_PARTY_DRAW},
+                {DrawingsNavigation.STEP_BY_GUIDE},
+                {DrawingsNavigation.STEP_BY_VIDEO},
                 {DrawingsNavigation.PRICE_CALCULATOR},
                 {DrawingsNavigation.PUBLIC_RECORDS},
                 {DrawingsNavigation.TERMS_CONDTINIONS},
                 {DrawingsNavigation.DRAWING_FAQ},
 
-                {DrawingsNavigation.THIRD_PARTY_DRAW},
-                {DrawingsNavigation.STEP_BY_VIDEO},
-                {DrawingsNavigation.STEP_BY_GUIDE},
+
+
+
         };
     }
 

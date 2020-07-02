@@ -6,7 +6,7 @@ import pages.AbstractPage;
 import utils.ElementUtils;
 
 public class ThirdPartyDrawServicePage extends AbstractPage<ThirdPartyDrawServicePage> {
-    @FindBy(css = "//h2[text() = 'Third-Party Draw Service']")
+    @FindBy(xpath = "//h2[text() = 'Third-Party Draw Service']")
     WebElement pageHeadingElement;
 
     @Override

@@ -6,7 +6,7 @@ import pages.AbstractPage;
 import utils.ElementUtils;
 
 public class OldGuidelinesPage extends AbstractPage<OldGuidelinesPage> {
-    @FindBy(css = "//h2[text() = 'Automated Clients']")
+    @FindBy(xpath = "//h2[text() = 'Automated Clients']")
     WebElement pageHeadingElement;
 
     @Override

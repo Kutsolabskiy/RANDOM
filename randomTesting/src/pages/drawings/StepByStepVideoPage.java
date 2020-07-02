@@ -6,7 +6,7 @@ import pages.AbstractPage;
 import utils.ElementUtils;
 
 public class StepByStepVideoPage extends AbstractPage<StepByStepVideoPage> {
-    @FindBy(css = "//h2[text() = 'Video Tutorial #1 – Blog and Business Giveaways']")
+    @FindBy(xpath = "//h2[text() = 'Video Tutorial #1 – Blog and Business Giveaways']")
     WebElement pageHeadingElement;
 
     @Override

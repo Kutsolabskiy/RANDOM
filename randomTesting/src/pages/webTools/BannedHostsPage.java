@@ -6,7 +6,7 @@ import pages.AbstractPage;
 import utils.ElementUtils;
 
 public class BannedHostsPage extends AbstractPage<BannedHostsPage> {
-    @FindBy(css = "//h2[text() = 'List of Banned Hosts']")
+    @FindBy(xpath = "//h2[text() = 'List of Banned Hosts']")
     WebElement pageHeadingElement;
 
     @Override

@@ -20,13 +20,8 @@ public class ElementUtils {
         element.click();
     }
 
-    public static void sleepTwoSeconds(){           // - Shame
-        try {
-            Thread.sleep(100);
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
-    }
+
+
 
     public static String getText(WebElement element){
         return element.getText();
@@ -39,8 +34,10 @@ public class ElementUtils {
     public static void windowMoveBack(){
         WebDriver driver = DriverProvider.getCurrentDriver();
         driver.navigate().back();
+    }
 
-
+    public static Integer getIntegerValueFromCurrentElementFromHisName(String name){
+        return Integer.parseInt(DriverProvider.getCurrentDriver().findElement(By.name(name)).getText());
     }
 
     public static boolean isDisplayed(WebElement element) {

@@ -6,7 +6,7 @@ import pages.AbstractPage;
 import utils.ElementUtils;
 
 public class PriceCalculatorPage extends AbstractPage<PriceCalculatorPage> {
-    @FindBy(css = "//h2[text() = 'Third-Party Draw Service – Price Calculator']")
+    @FindBy(xpath = "//h2[text() = 'Third-Party Draw Service – Price Calculator']")
     WebElement pageHeadingElement;
 
     @Override

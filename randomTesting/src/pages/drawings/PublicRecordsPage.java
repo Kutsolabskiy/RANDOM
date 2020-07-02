@@ -6,7 +6,7 @@ import pages.AbstractPage;
 import utils.ElementUtils;
 
 public class PublicRecordsPage extends AbstractPage<PublicRecordsPage> {
-    @FindBy(css = "//h2[text() = 'Third-Party Draw Service – Public Records']")
+    @FindBy(xpath = "//h2[text() = 'Third-Party Draw Service – Public Records']")
     WebElement pageHeadingElement;
 
     @Override
