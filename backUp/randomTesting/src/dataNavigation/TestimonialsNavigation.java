@@ -5,24 +5,21 @@ import pages.testimonials.*;
 
 public enum TestimonialsNavigation implements NavigationItem {
 
-    LOTTERIES_DRAWINGS("Lotteries and Drawings", LotteriesAndDrawingsPage.class, ExpectedTitles.LOTTERIES_DRAWINGS_TITLE),
-    GAMES_GAMBLING("Games and Gambling", GamesAndGamblingPage.class, ExpectedTitles.GAMES_GAMBLING_TITLE),
-    RANDOM_SAMPLING("Random Sampling", RandomSamplingPage.class, ExpectedTitles.RANDOM_SAMPLING_TITLE),
-    SIMULATIONS_MODELING("Simulation and Modelling", SimulationAndModellingPage.class, ExpectedTitles.SIMULATIONS_MODELING_TITLE),
-    SECURITY("Security", SecurityPage.class, ExpectedTitles.SECURITY_TITLE),
-    ARTS("The Arts", TheArtsPage.class, ExpectedTitles.ARTS_TITLE),
-    MISCELLANEOUS("Miscellaneous", MiscellaneousPage.class, ExpectedTitles.MISCELLANEOUS);
+    LOTTERIES_DRAWINGS("Lotteries and Drawings", LotteriesAndDrawingsPage.class),
+    GAMES_GAMBLING("Games and Gambling", GamesAndGamblingPage.class),
+    RANDOM_SAMPLING("Random Sampling", RandomSamplingPage.class),
+    SIMULATIONS_MODELING("Simulation and Modelling", SimulationAndModellingPage.class),
+    SECURITY("Security", SecurityPage.class),
+    ARTS("The Arts", TheArtsPage.class),
+    MISCELLANEOUS("Miscellaneous", MiscellaneousPage.class);
 
     private final String description;
 
     private final Class<? extends AbstractPage<?>> redirectionTarget;
 
-    private final String expectedTitle;
-
-    TestimonialsNavigation(String description, Class<? extends AbstractPage<?>> redirectionTarget, ExpectedTitles expectedTitles){
+    TestimonialsNavigation(String description, Class<? extends AbstractPage<?>> redirectionTarget){
         this.description = description;
         this.redirectionTarget = redirectionTarget;
-        this.expectedTitle = expectedTitles.getExpectedTitle();
     }
 
     @Override
@@ -30,10 +27,6 @@ public enum TestimonialsNavigation implements NavigationItem {
         return description;
     }
 
-    @Override
-    public String getExceptedTitle() {
-        return expectedTitle;
-    }
 
     @Override
     public Class<? extends AbstractPage<?>> getRedirectionTarget() {

@@ -1,12 +1,9 @@
 package tests.essential;
 
 import dataNavigation.NavigationItem;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.AbstractPage;
 import pages.components.NavigationPage;
 import pages.homePages.HomePage;
 import tests.AbstractTest;
@@ -14,11 +11,6 @@ import tests.data.NavigationDataProvider;
 import utils.DriverProvider;
 import utils.ElementUtils;
 import utils.WaitUtils;
-
-import java.io.File;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 public class NavigationTest extends AbstractTest {
 
@@ -74,7 +66,9 @@ public class NavigationTest extends AbstractTest {
 
         WaitUtils.waitUntilLoaded(item.getRedirectionTarget());
 
-        Assert.assertEquals(DriverProvider.getCurrentDriver().getTitle(), item.getExceptedTitle());
+        System.out.println(item.getRedirectionTarget().getSimpleName());
+
+        Assert.assertEquals(DriverProvider.getCurrentDriver().getTitle(), NavigationDataProvider.getExpectedTitle(item.getRedirectionTarget()));
         ElementUtils.windowMoveBack();
 
 

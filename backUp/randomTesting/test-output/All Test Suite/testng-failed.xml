@@ -3,6 +3,14 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="C:/Users/OhuevshiyZmey/IdeaProjects/randomTesting(failed)">
     <classes>
+      <class name="tests.essential.NavigationTest">
+        <methods>
+          <include name="stopDriver"/>
+          <include name="loudHomePage"/>
+          <include name="setupDriver"/>
+          <include name="testDrawingsNavigation" invocation-numbers="1"/>
+        </methods>
+      </class> <!-- tests.essential.NavigationTest -->
       <class name="tests.integers.IntegerGeneratorTest">
         <methods>
           <include name="stopDriver"/>

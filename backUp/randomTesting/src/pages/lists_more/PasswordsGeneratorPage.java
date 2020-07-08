@@ -22,10 +22,10 @@ import java.util.stream.Stream;
         @FindBy(name = "len")
         private WebElement lenField;
 
-        @FindBy(css = "value='Get Passwords'")
+        @FindBy(xpath = "//input[@value = 'Get Passwords']")
         private WebElement getPasswordsButton;
 
-        @FindBy(css = "class='data'")
+        @FindBy(xpath = "//ul[@class = 'data']")
         private WebElement dataContainer;
 
         @Override

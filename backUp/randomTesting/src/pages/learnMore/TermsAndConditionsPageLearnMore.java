@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import pages.AbstractPage;
 import utils.ElementUtils;
 
-public class TermsAndConditionsPage extends AbstractPage<TermsAndConditionsPage> {
+public class TermsAndConditionsPageLearnMore extends AbstractPage<TermsAndConditionsPageLearnMore> {
     @FindBy(xpath = "//h2[text() = 'Terms and Conditions']")
     private WebElement pageHeadingElement;
 

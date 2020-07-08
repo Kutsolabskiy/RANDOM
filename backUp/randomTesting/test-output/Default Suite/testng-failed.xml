@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="randomTesting(failed)">
     <classes>
-      <class name="tests.lists_more.PasswordGeneratorTest">
+      <class name="tests.essential.NavigationTest">
         <methods>
           <include name="stopDriver"/>
-          <include name="testPasswordGenerator" invocation-numbers="0"/>
+          <include name="loudHomePage"/>
           <include name="setupDriver"/>
+          <include name="testDrawingsNavigation" invocation-numbers="1"/>
         </methods>
-      </class> <!-- tests.lists_more.PasswordGeneratorTest -->
+      </class> <!-- tests.essential.NavigationTest -->
     </classes>
   </test> <!-- randomTesting(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

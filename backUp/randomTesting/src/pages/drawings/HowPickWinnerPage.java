@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import pages.AbstractPage;
 import utils.ElementUtils;
 
-public class HowPickWinner  extends AbstractPage<HowPickWinner> {
+public class HowPickWinnerPage extends AbstractPage<HowPickWinnerPage> {
     @FindBy(name = "Q3.1")
     WebElement pageHeadingElement;
 

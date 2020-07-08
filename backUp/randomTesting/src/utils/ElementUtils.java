@@ -20,15 +20,8 @@ public class ElementUtils {
         element.click();
     }
 
-
-
-
     public static String getText(WebElement element){
         return element.getText();
-    }
-
-    public static void getCorrectPageObject(Class<? extends AbstractPage<?>> objClass){
-
     }
 
     public static void windowMoveBack(){
@@ -37,7 +30,7 @@ public class ElementUtils {
     }
 
     public static Integer getIntegerValueFromCurrentElementFromHisName(String name){
-        return Integer.parseInt(DriverProvider.getCurrentDriver().findElement(By.name(name)).getText());
+        return Integer.parseInt(DriverProvider.getCurrentDriver().findElement(By.xpath(String.format("//input[@name = '%s']", name))).getAttribute("value"));
     }
 
     public static boolean isDisplayed(WebElement element) {
@@ -59,8 +52,4 @@ public class ElementUtils {
     public static void mouseOver(WebElement element){
         new Actions(DriverProvider.getCurrentDriver()).moveToElement(element).perform();
     }
-
-
-
-
 }

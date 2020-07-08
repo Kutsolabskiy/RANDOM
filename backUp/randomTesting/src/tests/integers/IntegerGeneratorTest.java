@@ -1,6 +1,7 @@
 package tests.integers;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -40,7 +41,7 @@ public class IntegerGeneratorTest extends AbstractTest {
     public void VerifyGenerationAmountNumbersOnSimpleMode(int numbersCount, int min, int max, int rowSize){
         IntegerGeneratorNumberPage integerGeneratorNumberPage = new IntegerGeneratorNumberPage()
                 .get().
-                        setIntegersForResetSimpleTest(numbersCount, min, max, rowSize);
+                        setIntegersForSimpleTest(numbersCount, min, max, rowSize);
 
         verifyResultAmountNumbers(integerGeneratorNumberPage.getResults(), numbersCount);
     }
@@ -49,7 +50,7 @@ public class IntegerGeneratorTest extends AbstractTest {
     public void VerifyGenerationBetweenMin_MaxOnSimpleMode(int numbersCount, int min, int max, int rowSize){
         IntegerGeneratorNumberPage integerGeneratorNumberPage = new IntegerGeneratorNumberPage()
                 .get().
-                        setIntegersForResetSimpleTest(numbersCount, min, max, rowSize);
+                        setIntegersForSimpleTest(numbersCount, min, max, rowSize);
 
         verifyResultBetweenMin_MaxNumbers(integerGeneratorNumberPage.getResults(), min, max);
     }
@@ -58,14 +59,14 @@ public class IntegerGeneratorTest extends AbstractTest {
     public void VerifyGenerationAmountColumnOnSimpleMode(int numbersCount, int min, int max, int rowSize){
         IntegerGeneratorNumberPage integerGeneratorNumberPage = new IntegerGeneratorNumberPage()
                 .get().
-                        setIntegersForResetSimpleTest(numbersCount, min, max, rowSize);
+                        setIntegersForSimpleTest(numbersCount, min, max, rowSize);
 
         verifyResultAmountColumnNumbers(integerGeneratorNumberPage.getResults(), min, max);
     }
 
     private void verifyResultBetweenMin_MaxNumbers(List<List<Integer>> results, int min, int max){
         List<Integer> allNumbers = results.stream().flatMap(Collection::stream).collect(Collectors.toList());
-        List<Integer> outOfBoundsValues = allNumbers.stream().filter(value -> !(value > min && value < max)).collect(Collectors.toList());
+        List<Integer> outOfBoundsValues = allNumbers.stream().filter(value -> !(value >= min && value <= max)).collect(Collectors.toList());
         Assert.assertTrue(outOfBoundsValues.isEmpty());
     }
 
@@ -119,6 +120,7 @@ public class IntegerGeneratorTest extends AbstractTest {
                 {15, -10, -1, 1},
                 {100, -10, 10, 15},
                 {10, -10, 10, 30},
+
         };
     }
 

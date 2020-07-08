@@ -3,11 +3,11 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/OhuevshiyZmey/IdeaProjects/randomTesting">
         <classes>
-            <class name="tests.integers.IntegerGeneratorTest">
-                <methods>
-                    <include name="testIntegerGeneration"/>
-                </methods>
-            </class>
+            <class name="tests.integers.IntegerGeneratorTest"/>
+            <class name="tests.essential.HomePageTest"/>
+            <class name="tests.essential.NavigationTest"/>
+            <class name="tests.lists_more.ListRandomizerTest"/>
+            <class name="tests.lists_more.PasswordGeneratorTest"/>
         </classes>
     </test>
 </suite>

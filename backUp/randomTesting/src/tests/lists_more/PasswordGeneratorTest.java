@@ -22,15 +22,17 @@ public class PasswordGeneratorTest extends AbstractTest {
     private static Object[][] passwordGeneratorRequest(){
         return new Object[][]{
                 {4, 10},
-                //            {6, 8},
-                //           {2, 5},
-                //          {3, 6},
-                //           {1, 7},
+                {6, 8},
+                {2, 9},
+                {3, 6},
+                {1, 7},
         };
     }
 
     public void verifyResult(List<String> resultList, int num, int len){
-        Assert.assertTrue(Stream.of(resultList).allMatch(s -> s.size() == len));
+        for (String res : resultList){
+            Assert.assertEquals(len, res.length());
+        }
         Assert.assertEquals(num, resultList.size());
 
     }
