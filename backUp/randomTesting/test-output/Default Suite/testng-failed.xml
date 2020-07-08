@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="randomTesting(failed)">
+    <classes>
+      <class name="tests.lists_more.PasswordGeneratorTest">
+        <methods>
+          <include name="stopDriver"/>
+          <include name="testPasswordGenerator" invocation-numbers="0"/>
+          <include name="setupDriver"/>
+        </methods>
+      </class> <!-- tests.lists_more.PasswordGeneratorTest -->
+    </classes>
+  </test> <!-- randomTesting(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->
